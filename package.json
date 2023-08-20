@@ -1,0 +1,11 @@
+{
+    "name": "Raspberry Pi Display",
+    "version": "1.0.0",
+    "description": "Display HDMI output to the screen",
+    "main": "main.js",
+    "author": "Jane Doe",
+    "license": "MIT",
+    "devDependencies": {
+        "electron": "^26.0.0"
+    }
+}
