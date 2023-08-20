@@ -6,10 +6,12 @@ import pathlib
 
 # test c++ library
 if __name__ == "__main__":
-    libname = pathlib.Path("libcmult.so").absolute();
-    c_lib = ctypes.CDLL(libname);
-    answer = c_lib.cmult(6,2.3);
-    print(answer);
+    libfile = list(pathlib.Path("build").glob("*/cmult*.so"))[0];
+    c_lib = ctypes.CDLL(libfile);
+    x,y = 6, 2.3;
+    c_lib.cmult.restype = ctypes.c_float;
+    ans = c_lib.cmult(x,ctypes.c_float(y));
+    print(f"    In python : int {x} float {y} returning {round(ans,1)}");
 
 
 
